@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `QuandlRequest` struct in crate `quandl`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, QuandlRequest">
+
+    <title>quandl::quandl_request::QuandlRequest - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>quandl</a>::<wbr><a href='index.html'>quandl_request</a></p><script>window.sidebarCurrent = {name: 'QuandlRequest', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>quandl</a>::<wbr><a href='index.html'>quandl_request</a>::<wbr><a class='struct' href=''>QuandlRequest</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-21' class='srclink' href='../../src/quandl/quandl_request.rs.html#13-36' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct QuandlRequest {
+    // some fields omitted
+}</pre><div class='docblock'><p>Parameters for the request to Quandl API</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(database_code: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, dataset_code: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+<div class='docblock'><p>Creates a new <code>QuandlRequest</code> using the specified database_code and dataset code.
+All other parameters as taken from the default implementation, setting the optional
+parameters to <code>None</code>.</p>
+</div><h4 id='method.api_key' class='method'><code>fn <a href='#method.api_key' class='fnname'>api_key</a>(self, key: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>) -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+<div class='docblock'><p>Quandl API key. Used for premium databases and/or increased usage limits.</p>
+</div><h4 id='method.limit' class='method'><code>fn <a href='#method.limit' class='fnname'>limit</a>(self, limit: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>) -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+<div class='docblock'><p>You can use <code>limit=n</code> to get only the first <code>n</code> rows of your dataset. Use <code>limit=1</code> to get
+the latest observation for any dataset.</p>
+</div><h4 id='method.rows' class='method'><code>fn <a href='#method.rows' class='fnname'>rows</a>(self, rows: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>) -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+<div class='docblock'><p>You can use <code>rows=n</code> to get only the first <code>n</code> rows of your dataset. Use <code>rows=1</code> to get
+the latest observation for any dataset.</p>
+</div><h4 id='method.column_index' class='method'><code>fn <a href='#method.column_index' class='fnname'>column_index</a>(self, indx: <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>) -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+<div class='docblock'><p>Request a specific column by passing the <code>column_index=n</code> parameter. Column 0 is the
+date column and is always returned. Data begins at column 1.</p>
+</div><h4 id='method.start_date' class='method'><code>fn <a href='#method.start_date' class='fnname'>start_date</a>&lt;T: ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a> + <a class='trait' href='../../quandl/quandl_request/trait.DateInput.html' title='quandl::quandl_request::DateInput'>DateInput</a>&gt;(self, date: &amp;T) -&gt; <a class='type' href='../../quandl/error/type.Result.html' title='quandl::error::Result'>Result</a>&lt;<a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a>&gt;</code></h4>
+<div class='docblock'><p>Retrieve data within a specific date range, by setting start date for your query.
+Takes either a <code>&amp;str</code> in the format of <code>yyyy-mm-dd</code> or a <code>chrono::NaiveDate</code> as input.</p>
+</div><h4 id='method.end_date' class='method'><code>fn <a href='#method.end_date' class='fnname'>end_date</a>&lt;T: ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a> + <a class='trait' href='../../quandl/quandl_request/trait.DateInput.html' title='quandl::quandl_request::DateInput'>DateInput</a>&gt;(self, date: &amp;T) -&gt; <a class='type' href='../../quandl/error/type.Result.html' title='quandl::error::Result'>Result</a>&lt;<a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a>&gt;</code></h4>
+<div class='docblock'><p>Retrieve data within a specific date range, by setting end date for your query.
+Takes either a <code>&amp;str</code> in the format of <code>yyyy-mm-dd</code> or a <code>chrono::NaiveDate</code> as input.</p>
+</div><h4 id='method.order' class='method'><code>fn <a href='#method.order' class='fnname'>order</a>(self, order: <a class='enum' href='../../quandl/quandl_request/enum.Order.html' title='quandl::quandl_request::Order'>Order</a>) -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+<div class='docblock'><p>Select the sort order. The default sort order is <code>Desc</code>.</p>
+</div><h4 id='method.collapse' class='method'><code>fn <a href='#method.collapse' class='fnname'>collapse</a>(self, collapse: <a class='enum' href='../../quandl/quandl_request/enum.Collapse.html' title='quandl::quandl_request::Collapse'>Collapse</a>) -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+<div class='docblock'><p>Parameters to indicate the desired frequency. When you change the frequency of a dataset,
+Quandl returns the last observation for the given period. By collapsing a daily dataset
+to monthly, you will get a sample of the original dataset where the observation for each
+month is the last data point available for that month. Set collapse with:
+<code>collapse=none|daily|weekly|monthly|quarterly|annual</code>.</p>
+</div><h4 id='method.transform' class='method'><code>fn <a href='#method.transform' class='fnname'>transform</a>(self, transform: <a class='enum' href='../../quandl/quandl_request/enum.Transform.html' title='quandl::quandl_request::Transform'>Transform</a>) -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+<div class='docblock'><p>Perform calculations on your data prior to downloading. The transformations currently
+available are row-on-row change, percentage change, cumulative sum, and normalize
+(set starting value at 100). Set the transform parameter with:
+<code>transform=none|diff|rdiff|cumul|normalize</code>.</p>
+</div><h4 id='method.run' class='method'><code>fn <a href='#method.run' class='fnname'>run</a>(&amp;self) -&gt; <a class='type' href='../../quandl/error/type.Result.html' title='quandl::error::Result'>Result</a>&lt;<a class='enum' href='../../serde_json/value/enum.Value.html' title='serde_json::value::Value'>Value</a>&gt;</code></h4>
+<div class='docblock'><p>Make a request to the Quandl API with the specified parameters</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a>) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a>) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../quandl/quandl_request/struct.QuandlRequest.html' title='quandl::quandl_request::QuandlRequest'>QuandlRequest</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "quandl";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
